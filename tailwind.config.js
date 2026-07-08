@@ -1,21 +1,20 @@
 export default {
-  content: [
-    './resources/**/*.blade.php',
-    './resources/**/*.js',
-    './resources/**/*.vue',
-  ],
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          DEFAULT: '#7b0d0d',
-          dark: '#5f0909',
+    content: [
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+    ],
+    theme: {
+        extend: {
+            colors: {
+                primary: '#5C1A1A',
+                'primary-dark': '#4A1414',
+                taupe: '#8A7A78',
+                'taupe-dark': '#7A6A68',
+                surface: '#F7F1EE',
+                white: '#FFFFFF',
+            },
         },
-        taupe: '#8d7272',
-        surface: '#f7f3f1',
-        'surface-soft': '#e7dcdc',
-      },
     },
-  },
-  plugins: [],
+    plugins: [],
 };

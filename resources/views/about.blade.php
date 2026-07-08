@@ -79,7 +79,7 @@
                     </span>
 
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] max-w-md">
-                        {{ __('Un cap stratégique et une mission opérationnelle clairement assumés.') }}
+                        {{ __('Une vision stratégique et une mission opérationnelle clairement assumés.') }}
                     </h2>
 
                     <p class="mt-6 text-sm sm:text-base lg:text-lg leading-relaxed text-white/68 max-w-md">
