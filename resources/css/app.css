@@ -1,0 +1,18 @@
+/* resources/css/app.css */
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7B0F1A;
+  --color-primary-dark: #5F0909;
+  --color-primary-soft: #986565;
+  --color-taupe: #8D7272;
+  --color-surface: #F7F3F1;
+  --color-surface-soft: #E7DCDC;
+  --color-ink: #2C1618;
+
+  --color-rouge-vif: #C62828;
+  --color-bordeaux: #7B0F1A;
+  --color-sombre: #111111;
+  --color-bleu-nuit: #0D1B3D;
+  --color-bleu-ardoise: #1E2F56;
+}
