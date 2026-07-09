@@ -1,3 +1,16 @@
+# Stage 1: Build Vite assets
+FROM node:22 AS node_builder
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+
+# Stage 2: PHP / Apache
 FROM php:8.3-apache
 
 RUN apt-get update && apt-get install -y \
@@ -21,6 +34,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 COPY . /var/www/html
+COPY --from=node_builder /app/public/build /var/www/html/public/build
 
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf \
     && printf '<Directory /var/www/html/public>\nAllowOverride All\nRequire all granted\n</Directory>\n' > /etc/apache2/conf-available/laravel.conf \
