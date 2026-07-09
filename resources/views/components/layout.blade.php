@@ -141,13 +141,15 @@
         </div>
     </footer>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const burgerIcon = document.getElementById('burger-icon');
         const crossIcon = document.getElementById('cross-icon');
 
-        mobileMenuButton?.addEventListener('click', function() {
+        mobileMenuButton?.addEventListener('click', function () {
             mobileMenu.classList.toggle('hidden');
             burgerIcon.classList.toggle('hidden');
             crossIcon.classList.toggle('hidden');
@@ -168,6 +170,8 @@
             }, 5000);
         }
     </script>
+
+    @stack('scripts')
 </body>
 
 </html>

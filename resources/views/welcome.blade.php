@@ -102,13 +102,56 @@
                     <div class="relative">
                         <div class="absolute -inset-4 rounded-[36px] bg-primary/5 blur-2xl"></div>
 
-                        <div class="relative overflow-hidden rounded-[32px] border border-primary/10 shadow-[0_18px_40px_rgba(91,60,154,0.08)]">
-                            <img
-                                src="{{ asset('images/home/expertise-datacenter.png') }}"
-                                alt="{{ __('KET Consulting - Présentation') }}"
-                                class="w-full h-[320px] sm:h-[420px] lg:h-[560px] object-cover">
+                        <div
+                            class="relative overflow-hidden rounded-[32px] border border-primary/10 shadow-[0_18px_40px_rgba(91,60,154,0.08)]"
+                            x-data='{
+                                slides: [
+                                    { src: "{{ asset('images/home/presentation/slide-1.png') }}", alt: "{{ __('KET Consulting - Télécommunications') }}" },
+                                    { src: "{{ asset('images/home/presentation/slide-2.jpg') }}", alt: "{{ __('KET Consulting - Développement') }}" },
+                                    { src: "{{ asset('images/home/presentation/slide-3.jpg') }}", alt: "{{ __('KET Consulting - Datacenter') }}" },
+                                ],
+                                active: 0,
+                                autoplay: null,
+                                init() {
+                                    if (this.slides.length <= 1) return;
+                                    this.start();
+                                },
+                                start() {
+                                    this.stop();
+                                    this.autoplay = setInterval(() => {
+                                        this.active = (this.active + 1) % this.slides.length;
+                                    }, 5000);
+                                },
+                                stop() {
+                                    if (this.autoplay) {
+                                        clearInterval(this.autoplay);
+                                        this.autoplay = null;
+                                    }
+                                },
+                                goTo(index) {
+                                    this.active = index;
+                                    this.start();
+                                }
+                            }'
+                        >
+                            <template x-for="(slide, index) in slides" :key="index">
+                                <img
+                                    :src="slide.src"
+                                    :alt="slide.alt"
+                                    x-show="active === index"
+                                    x-transition:enter="transition ease-out duration-700"
+                                    x-transition:enter-start="opacity-0"
+                                    x-transition:enter-end="opacity-100"
+                                    x-transition:leave="transition ease-in duration-700"
+                                    x-transition:leave-start="opacity-100"
+                                    x-transition:leave-end="opacity-0"
+                                    class="absolute inset-0 w-full h-[320px] sm:h-[420px] lg:h-[560px] object-cover"
+                                >
+                            </template>
 
-                            <div class="absolute inset-0 bg-gradient-to-t from-primary/45 via-primary/10 to-transparent"></div>
+                            <div class="relative h-[320px] sm:h-[420px] lg:h-[560px]"></div>
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/45 via-primary/10 to-transparent pointer-events-none"></div>
 
                             <div class="absolute left-4 right-4 bottom-4 sm:left-6 sm:right-auto sm:max-w-sm rounded-2xl border border-white/20 bg-white/14 backdrop-blur-md p-4 sm:p-5">
                                 <p class="text-xs font-bold uppercase tracking-[0.22em] text-white/72 mb-2">
@@ -117,6 +160,18 @@
                                 <p class="text-sm sm:text-base leading-relaxed text-white/92">
                                     {{ __('Des solutions numériques et techniques conçues pour répondre aux enjeux concrets des organisations.') }}
                                 </p>
+                            </div>
+
+                            <div class="absolute bottom-4 right-4 sm:right-6 flex gap-2 z-10">
+                                <template x-for="(slide, index) in slides" :key="'dot-' + index">
+                                    <button
+                                        type="button"
+                                        @click="goTo(index)"
+                                        :class="active === index ? 'bg-white w-6' : 'bg-white/40 w-2'"
+                                        class="h-2 rounded-full transition-all duration-300"
+                                        :aria-label="'Slide ' + (index + 1)">
+                                    </button>
+                                </template>
                             </div>
                         </div>
                     </div>
@@ -297,3 +352,6 @@
         </div>
     </section>
 </x-layout>
+
+Fait bien la mise à jour
+</query>
