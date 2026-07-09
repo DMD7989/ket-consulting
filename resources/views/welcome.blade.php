@@ -352,6 +352,3 @@
         </div>
     </section>
 </x-layout>
-
-Fait bien la mise à jour
-</query>
