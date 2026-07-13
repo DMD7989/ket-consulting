@@ -2,17 +2,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #7B0F1A;
-  --color-primary-dark: #5F0909;
-  --color-primary-soft: #986565;
-  --color-taupe: #8D7272;
-  --color-surface: #F7F3F1;
-  --color-surface-soft: #E7DCDC;
-  --color-ink: #2C1618;
+    /* Couleurs principales KET */
+    --color-primary: #0D1B3D;
+    --color-primary-dark: #07112A;
+    --color-primary-soft: #1E2F56;
 
-  --color-rouge-vif: #C62828;
-  --color-bordeaux: #7B0F1A;
-  --color-sombre: #111111;
-  --color-bleu-nuit: #0D1B3D;
-  --color-bleu-ardoise: #1E2F56;
+    /* Accents */
+    --color-red: #C62828;
+    --color-red-dark: #991B1B;
+    --color-bordeaux: #7B0F1A;
+
+    /* Fonds et textes */
+    --color-surface: #F7F8FA;
+    --color-surface-soft: #EEF1F6;
+    --color-ink: #111111;
+
+    /* Compatibilité avec les anciennes classes */
+    --color-rouge-vif: #C62828;
+    --color-sombre: #111111;
+    --color-bleu-nuit: #0D1B3D;
+    --color-bleu-ardoise: #1E2F56;
 }

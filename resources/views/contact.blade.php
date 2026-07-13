@@ -16,7 +16,7 @@
                 {{ __('Parlons de votre projet') }}
             </h1>
 
-            <p class="mt-5 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-primary/68">
+            <p class="mt-5 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-neutral-900/78">
                 {{ __('Présentez-nous votre besoin, votre contexte ou votre idée. Notre équipe vous répondra avec une approche claire, structurée et adaptée à votre organisation.') }}
             </p>
         </div>
@@ -26,17 +26,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
             <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                 <div class="lg:col-span-4">
-                    <span class="text-[11px] sm:text-xs font-bold text-bordeaux uppercase tracking-[0.24em] block mb-4">
-                        01. {{ __('Échange') }}
-                    </span>
-
                     <h2 class="text-2xl sm:text-4xl font-black tracking-[-0.03em] leading-[1.08] text-primary">
                         {{ __('Décrivez votre besoin en quelques lignes') }}
                     </h2>
 
                     <div class="w-12 h-px bg-primary/15 mt-5"></div>
 
-                    <p class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-primary/62">
+                    <p class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-neutral-900/78">
                         {{ __('Qu’il s’agisse d’un besoin en développement, cybersécurité, infrastructure ou transformation digitale, nous revenons vers vous avec une réponse adaptée.') }}
                     </p>
                 </div>
@@ -48,66 +44,87 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('contact.submit', ['locale' => app()->getLocale()]) }}"
+                    <form action="{{ route('contact.submit', ['locale' => request()->route('locale')]) }}"
                           method="POST"
                           class="space-y-5 sm:space-y-6 rounded-[28px] border border-primary/10 bg-white/85 p-5 sm:p-8 lg:p-10 shadow-[0_12px_32px_rgba(91,60,154,0.05)] backdrop-blur-sm">
                         @csrf
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                             <div>
-                                <label class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
+                                <label for="name" class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
                                     {{ __('Nom / Entreprise') }}
                                 </label>
-                                <input type="text"
+                                <input id="name"
+                                       type="text"
                                        name="name"
+                                       value="{{ old('name') }}"
                                        required
-                                       class="w-full rounded-2xl border border-primary/10 bg-white px-4 py-3.5 text-sm text-primary placeholder:text-primary/35 outline-none transition duration-200 focus:border-bordeaux focus:bg-white focus:ring-0">
+                                       class="w-full rounded-2xl border @error('name') border-red-400 @else border-primary/10 @enderror bg-white px-4 py-3.5 text-sm text-primary placeholder:text-primary/35 outline-none transition duration-200 focus:border-bordeaux focus:ring-0">
+                                @error('name')
+                                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div>
-                                <label class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
+                                <label for="email" class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
                                     {{ __('Adresse Email') }}
                                 </label>
-                                <input type="email"
+                                <input id="email"
+                                       type="email"
                                        name="email"
+                                       value="{{ old('email') }}"
                                        required
-                                       class="w-full rounded-2xl border border-primary/10 bg-white px-4 py-3.5 text-sm text-primary placeholder:text-primary/35 outline-none transition duration-200 focus:border-bordeaux focus:bg-white focus:ring-0">
+                                       class="w-full rounded-2xl border @error('email') border-red-400 @else border-primary/10 @enderror bg-white px-4 py-3.5 text-sm text-primary placeholder:text-primary/35 outline-none transition duration-200 focus:border-bordeaux focus:ring-0">
+                                @error('email')
+                                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
 
                         <div>
-                            <label class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
+                            <label for="form-type" class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
                                 {{ __('Type de demande') }}
                             </label>
                             <select name="type"
                                     id="form-type"
                                     required
-                                    class="w-full rounded-2xl border border-primary/10 bg-white px-4 py-3.5 text-sm text-primary outline-none transition duration-200 focus:border-bordeaux focus:ring-0">
-                                <option value="contact">{{ __('Simple prise de contact') }}</option>
-                                <option value="devis">{{ __('Demande de devis personnalisé') }}</option>
+                                    class="w-full rounded-2xl border @error('type') border-red-400 @else border-primary/10 @enderror bg-white px-4 py-3.5 text-sm text-primary outline-none transition duration-200 focus:border-bordeaux focus:ring-0">
+                                <option value="contact" @selected(old('type') === 'contact')>{{ __('Simple prise de contact') }}</option>
+                                <option value="devis" @selected(old('type') === 'devis')>{{ __('Demande de devis personnalisé') }}</option>
                             </select>
+                            @error('type')
+                                <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
-                        <div id="service-selection-block" class="hidden">
-                            <label class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
+                        <div id="service-selection-block" class="{{ old('type') === 'devis' ? '' : 'hidden' }}">
+                            <label for="service" class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
                                 {{ __('Expertise requise') }}
                             </label>
                             <select name="service"
-                                    class="w-full rounded-2xl border border-primary/10 bg-white px-4 py-3.5 text-sm text-primary outline-none transition duration-200 focus:border-bordeaux focus:ring-0">
-                                <option value="Web">{{ __('Service_1_Title') }}</option>
-                                <option value="Mobile">{{ __('Service_2_Title') }}</option>
-                                <option value="Cyber">{{ __('Service_6_Title') }}</option>
+                                    id="service"
+                                    class="w-full rounded-2xl border @error('service') border-red-400 @else border-primary/10 @enderror bg-white px-4 py-3.5 text-sm text-primary outline-none transition duration-200 focus:border-bordeaux focus:ring-0">
+                                <option value="Web" @selected(old('service') === 'Web')>{{ __('Service_1_Title') }}</option>
+                                <option value="Mobile" @selected(old('service') === 'Mobile')>{{ __('Service_2_Title') }}</option>
+                                <option value="Cyber" @selected(old('service') === 'Cyber')>{{ __('Service_6_Title') }}</option>
                             </select>
+                            @error('service')
+                                <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div>
-                            <label class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
+                            <label for="message" class="block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary/70">
                                 {{ __('Votre message') }}
                             </label>
-                            <textarea name="message"
+                            <textarea id="message"
+                                      name="message"
                                       required
                                       rows="5"
-                                      class="w-full rounded-2xl border border-primary/10 bg-white px-4 py-3.5 text-sm text-primary placeholder:text-primary/35 outline-none transition duration-200 focus:border-bordeaux focus:ring-0"></textarea>
+                                      class="w-full rounded-2xl border @error('message') border-red-400 @else border-primary/10 @enderror bg-white px-4 py-3.5 text-sm text-primary placeholder:text-primary/35 outline-none transition duration-200 focus:border-bordeaux focus:ring-0">{{ old('message') }}</textarea>
+                            @error('message')
+                                <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="pt-2">
@@ -117,7 +134,7 @@
                             </button>
                         </div>
 
-                        <p class="text-xs leading-relaxed text-primary/45">
+                        <p class="text-xs leading-relaxed text-neutral-900/68">
                             {{ __('Nous utilisons vos informations uniquement pour traiter votre demande et vous recontacter dans les meilleurs délais.') }}
                         </p>
                     </form>

@@ -73,7 +73,7 @@
                     {{ __('Nos') }} {{ __('Solutions') }} {{ __('Technologiques') }}
                 </h1>
 
-                <p class="mt-5 sm:mt-6 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-primary/70">
+                <p class="mt-5 sm:mt-6 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-neutral-900/78">
                     {{ __('KET Consulting accompagne les entreprises, institutions et organisations avec des services numériques, techniques et stratégiques adaptés à leurs enjeux de performance, de sécurité et de transformation.') }}
                 </p>
             </div>
@@ -135,7 +135,7 @@
                                     {{ $service['title'] }}
                                 </h3>
 
-                                <p class="mt-4 text-sm sm:text-base leading-relaxed text-primary/68">
+                                <p class="mt-4 text-sm sm:text-base leading-relaxed text-neutral-900/78">
                                     {{ $service['description'] }}
                                 </p>
 
@@ -167,7 +167,7 @@
 
                 <div class="w-12 h-px bg-primary/15 mx-auto mt-5"></div>
 
-                <p class="mt-5 max-w-xl mx-auto text-sm sm:text-base leading-relaxed text-primary/62">
+                <p class="mt-5 max-w-xl mx-auto text-sm sm:text-base leading-relaxed text-neutral-900/78">
                     {{ __('Nous concevons et sécurisons des infrastructures numériques capables de répondre aux enjeux de disponibilité, de performance, de protection des données et de continuité des activités.') }}
                 </p>
             </div>
@@ -184,7 +184,7 @@
                         {{ __('Security by Design') }}
                     </h3>
 
-                    <p class="mt-3 max-w-xs mx-auto text-sm leading-relaxed text-primary/60">
+                    <p class="mt-3 max-w-xs mx-auto text-sm leading-relaxed text-neutral-900/78">
                         {{ __('Nous intégrons la sécurité dès la conception à travers des audits, des revues d’architecture et des tests d’intrusion afin de réduire les risques et renforcer la fiabilité des systèmes.') }}
                     </p>
                 </article>
@@ -200,7 +200,7 @@
                         {{ __('Réseaux critiques') }}
                     </h3>
 
-                    <p class="mt-3 max-w-xs mx-auto text-sm leading-relaxed text-primary/60">
+                    <p class="mt-3 max-w-xs mx-auto text-sm leading-relaxed text-neutral-900/78">
                         {{ __('Nous réalisons des études d’ingénierie réseau, des interconnexions inter-sites et des dispositifs techniques destinés à assurer la stabilité, la performance et la continuité de service.') }}
                     </p>
                 </article>
@@ -221,7 +221,7 @@
                         {{ __('Souveraineté & résilience des infrastructures') }}
                     </h3>
 
-                    <p class="mt-3 max-w-xs mx-auto text-sm leading-relaxed text-primary/60">
+                    <p class="mt-3 max-w-xs mx-auto text-sm leading-relaxed text-neutral-900/78">
                         {{ __('Nous mettons en place des mécanismes de supervision, d’infogérance et de sauvegarde pour garantir la disponibilité des services, la protection des données et la continuité d’exploitation.') }}
                     </p>
                 </article>
