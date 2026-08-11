@@ -104,9 +104,12 @@
                             <select name="service"
                                     id="service"
                                     class="w-full rounded-2xl border @error('service') border-red-400 @else border-primary/10 @enderror bg-white px-4 py-3.5 text-sm text-primary outline-none transition duration-200 focus:border-bordeaux focus:ring-0">
-                                <option value="Web" @selected(old('service') === 'Web')>{{ __('Service_1_Title') }}</option>
-                                <option value="Mobile" @selected(old('service') === 'Mobile')>{{ __('Service_2_Title') }}</option>
-                                <option value="Cyber" @selected(old('service') === 'Cyber')>{{ __('Service_6_Title') }}</option>
+                                <option value="Developpement" @selected(old('service') === 'Developpement')>{{ __('Développement web et mobile') }}</option>
+                                <option value="Infrastructures" @selected(old('service') === 'Infrastructures')>{{ __('Infrastructures & réseaux') }}</option>
+                                <option value="Conseil" @selected(old('service') === 'Conseil')>{{ __('Conseil & transformation digitale') }}</option>
+                                <option value="Datacenter" @selected(old('service') === 'Datacenter')>{{ __('Datacenter') }}</option>
+                                <option value="Donnees" @selected(old('service') === 'Donnees')>{{ __('Analyse de données') }}</option>
+                                <option value="Formations" @selected(old('service') === 'Formations')>{{ __('Formations') }}</option>
                             </select>
                             @error('service')
                                 <p class="mt-2 text-xs text-red-600">{{ $message }}</p>

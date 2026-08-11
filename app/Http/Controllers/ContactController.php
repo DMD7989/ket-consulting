@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactFormMail;
+use App\Models\Lead;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -22,7 +24,13 @@ class ContactController extends Controller
             $data['service'] = null;
         }
 
-        Mail::to('keytechnologie82@gmail.com')->send(new ContactFormMail($data));
+        Lead::create($data);
+
+        try {
+            Mail::to(config('services.contact.mail_to'))->send(new ContactFormMail($data));
+        } catch (\Throwable $e) {
+            Log::error('Contact form email failed to send', ['exception' => $e->getMessage()]);
+        }
 
         return back()->with('success', __('Votre demande a bien été envoyée.'));
     }

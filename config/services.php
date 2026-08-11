@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'contact' => [
+        'mail_to' => env('CONTACT_MAIL_TO', 'keytechnologie82@gmail.com'),
+    ],
+
 ];

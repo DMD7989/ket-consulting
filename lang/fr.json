@@ -67,5 +67,11 @@
 
     "Services_Hero_Title": "Nos Solutions Technologiques",
     "Services_Hero_Subtitle": "Découvrez en détail comment nos expertises sectorielles répondent aux exigences de performance, de scalabilité et de sécurité de votre organisation.",
-    "Services_Intro": "Une approche d'ingénierie rigoureuse pour chaque projet, du diagnostic initial au déploiement de production."
+    "Services_Intro": "Une approche d'ingénierie rigoureuse pour chaque projet, du diagnostic initial au déploiement de production.",
+
+    "Infrastructures & réseaux": "Infrastructures & réseaux",
+    "Conseil & transformation digitale": "Conseil & transformation digitale",
+    "Datacenter": "Datacenter",
+    "Analyse de données": "Analyse de données",
+    "Formations": "Formations"
 }
