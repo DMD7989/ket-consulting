@@ -67,9 +67,27 @@
                                      class="max-h-16 sm:max-h-20 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
                             </div>
 
-                            <div class="group h-32 sm:h-36 lg:h-40 rounded-[24px] border border-primary/10 bg-white flex items-center justify-center p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:col-span-2 lg:col-span-1">
+                            <div class="group h-32 sm:h-36 lg:h-40 rounded-[24px] border border-primary/10 bg-white flex items-center justify-center p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
                                 <img src="{{ asset('images/partners/partenaire3.png') }}"
                                      alt="Partenaire 3"
+                                     class="max-h-16 sm:max-h-20 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                            </div>
+
+                            <div class="group h-32 sm:h-36 lg:h-40 rounded-[24px] border border-primary/10 bg-white flex items-center justify-center p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                                <img src="{{ asset('images/partners/partenaire4.png') }}"
+                                     alt="Partenaire 4"
+                                     class="max-h-16 sm:max-h-20 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                            </div>
+
+                            <div class="group h-32 sm:h-36 lg:h-40 rounded-[24px] border border-primary/10 bg-white flex items-center justify-center p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                                <img src="{{ asset('images/partners/partenaire5.png') }}"
+                                     alt="Partenaire 5"
+                                     class="max-h-16 sm:max-h-20 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                            </div>
+
+                            <div class="group h-32 sm:h-36 lg:h-40 rounded-[24px] border border-primary/10 bg-white flex items-center justify-center p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                                <img src="{{ asset('images/partners/partenaire6.png') }}"
+                                     alt="Partenaire 6"
                                      class="max-h-16 sm:max-h-20 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
                             </div>
                         </div>
