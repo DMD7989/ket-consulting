@@ -40,7 +40,7 @@
         <div class="relative z-10 w-full">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
                 <div class="max-w-5xl mx-auto text-center">
-                    <div class="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 mb-6 sm:mb-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 sm:mb-8 max-w-3xl mx-auto">
                         {{-- Rouge : action principale --}}
                         <a href="{{ route('about', ['locale' => app()->getLocale()]) }}"
                            class="inline-flex items-center justify-center rounded-lg bg-red px-5 py-3 text-sm font-bold text-white shadow-md transition duration-300 hover:bg-red-dark">
@@ -349,6 +349,51 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- NOS PARTENAIRES --}}
+    <section id="partenaires" class="bg-surface text-ink border-t border-primary/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+            <div class="max-w-3xl mx-auto mb-14 text-center">
+                <span class="text-xs font-bold uppercase tracking-[0.24em] text-bordeaux">
+                    {{ __('Nos partenaires') }}
+                </span>
+
+                <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.08] text-ink">
+                    {{ __('Nous travaillons avec des partenaires de confiance') }}
+                </h2>
+
+                <p class="mt-6 text-sm sm:text-base leading-relaxed text-ink/70 max-w-2xl mx-auto">
+                    {{ __('Parce qu’un projet ambitieux repose aussi sur la qualité des alliances qui le portent, nous privilégions des collaborations sérieuses, complémentaires et orientées résultats.') }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 sm:gap-6">
+                <div class="group h-28 sm:h-32 rounded-[20px] border border-primary/10 bg-white flex items-center justify-center p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <img src="{{ asset('images/partners/partenaire1.png') }}" alt="Partenaire 1" class="max-h-14 sm:max-h-16 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                </div>
+
+                <div class="group h-28 sm:h-32 rounded-[20px] border border-primary/10 bg-white flex items-center justify-center p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <img src="{{ asset('images/partners/partenaire2.png') }}" alt="Partenaire 2" class="max-h-14 sm:max-h-16 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                </div>
+
+                <div class="group h-28 sm:h-32 rounded-[20px] border border-primary/10 bg-white flex items-center justify-center p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <img src="{{ asset('images/partners/partenaire3.png') }}" alt="Partenaire 3" class="max-h-14 sm:max-h-16 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                </div>
+
+                <div class="group h-28 sm:h-32 rounded-[20px] border border-primary/10 bg-white flex items-center justify-center p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <img src="{{ asset('images/partners/partenaire4.png') }}" alt="Partenaire 4" class="max-h-14 sm:max-h-16 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                </div>
+
+                <div class="group h-28 sm:h-32 rounded-[20px] border border-primary/10 bg-white flex items-center justify-center p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <img src="{{ asset('images/partners/partenaire5.png') }}" alt="Partenaire 5" class="max-h-14 sm:max-h-16 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
+                </div>
+
+                <div class="group h-28 sm:h-32 rounded-[20px] border border-primary/10 bg-white flex items-center justify-center p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <img src="{{ asset('images/partners/partenaire6.png') }}" alt="Partenaire 6" class="max-h-14 sm:max-h-16 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
                 </div>
             </div>
         </div>

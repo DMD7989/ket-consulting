@@ -23,3 +23,7 @@
     --color-bleu-nuit: #0D1B3D;
     --color-bleu-ardoise: #1E2F56;
 }
+
+[x-cloak] {
+    display: none !important;
+}

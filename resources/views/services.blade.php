@@ -1,71 +1,6 @@
 <x-layout>
     <x-slot:title>{{ __('Services') }} | KET Consulting</x-slot:title>
 
-    @php
-        $services = [
-            [
-                'label' => __('DÉVELOPPEMENT WEB ET MOBILE'),
-                'title' => __('Solutions web et mobiles sur mesure'),
-                'description' => __('Conception et développement d’applications web et mobiles robustes, évolutives et centrées sur les besoins métier des organisations.'),
-                'images' => [
-                    asset('images/services/developpement-web-mobile/1.jpg'),
-                    asset('images/services/developpement-web-mobile/2.jpg'),
-                    asset('images/services/developpement-web-mobile/3.png'),
-                ],
-            ],
-            [
-                'label' => __('INFRASTRUCTURES & RÉSEAUX'),
-                'title' => __('Architecture, réseaux et infrastructures critiques'),
-                'description' => __('Déploiement d’infrastructures IT, interconnexions réseau et environnements techniques fiables pour soutenir la performance et la continuité des opérations.'),
-                'images' => [
-                    asset('images/services/infrastructures-reseaux/1.jpg'),
-                    asset('images/services/infrastructures-reseaux/2.jpg'),
-                    asset('images/services/infrastructures-reseaux/3.jpg'),
-                ],
-            ],
-            [
-                'label' => __('CONSEIL & TRANSFORMATION DIGITALE'),
-                'title' => __('Pilotage et transformation des organisations'),
-                'description' => __('Accompagnement stratégique, cadrage des projets et modernisation des outils pour accélérer la transformation digitale des organisations de manière durable.'),
-                'images' => [
-                    asset('images/services/conseil-transformation-digital/1.jpg'),
-                    asset('images/services/conseil-transformation-digital/2.jpg'),
-                    asset('images/services/conseil-transformation-digital/3.jpg'),
-                ],
-            ],
-            [
-                'label' => __('DATACENTER'),
-                'title' => __('Hébergement et infrastructures Datacenter'),
-                'description' => __('Conception, déploiement et gestion d’infrastructures d’hébergement sécurisées et performantes, garantissant disponibilité, fiabilité et continuité de service pour les données critiques des organisations.'),
-                'images' => [
-                    asset('images/services/datacenter/1.jpg'),
-                    asset('images/services/datacenter/2.jpg'),
-                    asset('images/services/datacenter/3.jpg'),
-                ],
-            ],
-            [
-                'label' => __('ANALYSE DE DONNÉES'),
-                'title' => __('Analyse et valorisation des données'),
-                'description' => __('Collecte, traitement et interprétation des données pour transformer l’information brute en aide à la décision, au service de la performance et de la stratégie des organisations.'),
-                'images' => [
-                    asset('images/services/analyse-donnees/1.jpg'),
-                    asset('images/services/analyse-donnees/2.jpg'),
-                    asset('images/services/analyse-donnees/3.jpg'),
-                ],
-            ],
-            [
-                'label' => __('FORMATIONS'),
-                'title' => __('Formations professionnelles et académiques'),
-                'description' => __('Programmes de formation adaptés aux étudiants comme aux professionnels, couvrant les domaines du numérique, des télécommunications, de la cybersécurité et du développement, pour renforcer durablement les compétences techniques.'),
-                'images' => [
-                    asset('images/services/formations/1.jpg'),
-                    asset('images/services/formations/2.jpg'),
-                    asset('images/services/formations/3.jpg'),
-                ],
-            ],
-        ];
-    @endphp
-
     <section class="bg-gradient-to-br from-[#F6F1EC] via-[#F3ECE6] to-[#EEE4DB] border-b border-primary/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24">
             <div class="max-w-3xl mx-auto text-center">
@@ -85,13 +20,13 @@
                     </span>
                 </div>
 
-                <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    @foreach ($services as $service)
+                <div class="mt-12 grid gap-6 md:grid-cols-2">
+                    @foreach ($services as $slug => $service)
                         <article class="group overflow-hidden rounded-[24px] border border-primary/10 bg-white shadow-[0_12px_28px_rgba(91,60,154,0.05)] transition duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_18px_38px_rgba(91,60,154,0.10)]">
                             <div
                                 x-data="serviceCarousel(@js($service['images']))"
                                 x-init="init()"
-                                class="relative h-52 overflow-hidden"
+                                class="relative h-64 sm:h-80 overflow-hidden"
                             >
                                 <template x-for="(image, index) in images" :key="index">
                                     <div
@@ -140,7 +75,7 @@
                                 </p>
 
                                 <a
-                                    href="{{ route('contact', ['locale' => app()->getLocale()]) }}"
+                                    href="{{ route('services.show', ['locale' => app()->getLocale(), 'slug' => $slug]) }}"
                                     class="mt-6 inline-flex items-center justify-center gap-2 text-sm font-bold text-primary transition duration-300 hover:text-bordeaux"
                                 >
                                     <span>{{ __('Découvrir') }}</span>
