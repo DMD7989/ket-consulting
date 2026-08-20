@@ -9,18 +9,15 @@ class ServiceController extends Controller
         return [
             'telecommunications-reseaux' => [
                 'label' => __('TÉLÉCOMMUNICATION ET RÉSEAUX'),
-                'title' => __('Infrastructures, réseaux et datacenters'),
-                'description' => __('Déploiement d’infrastructures IT, interconnexions réseau et environnements d’hébergement sécurisés, pour garantir performance, disponibilité et continuité des opérations.'),
+                'title' => __('Installation et déploiement d’infrastructures réseau'),
+                'description' => __('Installation d’équipements et d’outils d’infrastructures réseau, interconnexions et câblage, pour garantir performance, disponibilité et continuité des opérations.'),
                 'body' => [
-                    __('Nous concevons et déployons des infrastructures IT et des interconnexions réseau capables de soutenir les opérations les plus exigeantes. Études d’ingénierie, câblage, équipements actifs et supervision : chaque intervention vise une disponibilité et une continuité de service élevées, quel que soit le contexte opérationnel de l’organisation.'),
-                    __('Cette expertise s’étend à l’hébergement : conception, déploiement et gestion d’infrastructures Datacenter sécurisées et performantes. Nous garantissons la disponibilité, la fiabilité et la continuité de service des données critiques, avec des mécanismes de sauvegarde et d’infogérance adaptés à chaque organisation.'),
+                    __('Nous installons et déployons les équipements et outils d’infrastructures réseau capables de soutenir les opérations les plus exigeantes : études d’ingénierie, câblage, équipements actifs et supervision. Chaque intervention vise une disponibilité et une continuité de service élevées, quel que soit le contexte opérationnel de l’organisation.'),
+                    __('Nos équipes interviennent directement sur site pour l’installation, la configuration et la mise en service des équipements réseau, avec un accompagnement technique de proximité tout au long du projet.'),
                 ],
                 'images' => [
-                    asset('images/services/datacenter/1.jpg'),
                     asset('images/services/infrastructures-reseaux/2.jpg'),
                     asset('images/services/infrastructures-reseaux/3.jpg'),
-                    asset('images/services/datacenter/2.jpg'),
-                    asset('images/services/datacenter/3.jpg'),
                     asset('images/services/infrastructures-reseaux/1.jpg'),
                 ],
             ],

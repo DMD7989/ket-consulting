@@ -3,25 +3,8 @@
 
     <section class="bg-gradient-to-br from-[#F6F1EC] via-[#F3ECE6] to-[#EEE4DB] border-b border-primary/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24">
-            <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-primary">
-                    {{ __('Nos') }} {{ __('Solutions') }} {{ __('Technologiques') }}
-                </h1>
-
-                <p class="mt-5 sm:mt-6 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-neutral-900/78">
-                    {{ __('KET Consulting accompagne les entreprises, institutions et organisations avec des services numériques, techniques et stratégiques adaptés à leurs enjeux de performance, de sécurité et de transformation.') }}
-                </p>
-            </div>
-
-            <div class="mt-12 sm:mt-14 lg:mt-16">
-                <div class="max-w-3xl mx-auto text-center">
-                    <span class="inline-flex items-center rounded-full border border-primary/10 bg-white/70 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-primary/60">
-                        {{ __('Nos services') }}
-                    </span>
-                </div>
-
-                <div class="mt-12 grid gap-6 md:grid-cols-2">
-                    @foreach ($services as $slug => $service)
+            <div class="grid gap-6 md:grid-cols-2">
+                @foreach ($services as $slug => $service)
                         <article class="group overflow-hidden rounded-[24px] border border-primary/10 bg-white shadow-[0_12px_28px_rgba(91,60,154,0.05)] transition duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_18px_38px_rgba(91,60,154,0.10)]">
                             <div
                                 x-data="serviceCarousel(@js($service['images']))"
@@ -87,7 +70,6 @@
                             </div>
                         </article>
                     @endforeach
-                </div>
             </div>
         </div>
     </section>

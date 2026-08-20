@@ -110,7 +110,7 @@
                                 slides: [
                                     { src: "{{ asset('images/home/presentation/slide-1.png') }}", alt: "{{ __('KET Consulting - Télécommunications') }}" },
                                     { src: "{{ asset('images/home/presentation/slide-2.jpg') }}", alt: "{{ __('KET Consulting - Développement') }}" },
-                                    { src: "{{ asset('images/home/presentation/slide-3.jpg') }}", alt: "{{ __('KET Consulting - Datacenter') }}" },
+                                    { src: "{{ asset('images/home/presentation/slide-3.jpg') }}", alt: "{{ __('KET Consulting - Infrastructures réseau') }}" },
                                 ],
                                 active: 0,
                                 autoplay: null,
