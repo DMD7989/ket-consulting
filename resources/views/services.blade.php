@@ -76,20 +76,7 @@
 
     <section class="border-y border-primary/10 bg-[#f5f2eb] text-primary">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="mt-5 text-2xl sm:text-3xl lg:text-4xl font-black tracking-[-0.03em] leading-[1.06] text-primary">
-                    {{ __('Infrastructures, Réseaux') }}<br>
-                    {{ __('& Cybersécurité') }}
-                </h2>
-
-                <div class="w-12 h-px bg-primary/15 mx-auto mt-5"></div>
-
-                <p class="mt-5 max-w-xl mx-auto text-sm sm:text-base leading-relaxed text-neutral-900/78">
-                    {{ __('Nous concevons et sécurisons des infrastructures numériques capables de répondre aux enjeux de disponibilité, de performance, de protection des données et de continuité des activités.') }}
-                </p>
-            </div>
-
-            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-9 lg:gap-x-10 lg:gap-y-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-9 lg:gap-x-10 lg:gap-y-12">
                 <article class="group text-center">
                     <div class="mx-auto flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-[24px] border border-bordeaux/12 bg-white/80 text-bordeaux shadow-[0_10px_20px_rgba(91,60,154,0.04)] transition duration-300 group-hover:-translate-y-0.5 group-hover:border-bordeaux/20 group-hover:bg-white group-hover:shadow-[0_16px_28px_rgba(91,60,154,0.07)]">
                         <svg class="h-8 w-8 sm:h-10 sm:w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -130,11 +117,7 @@
                         </svg>
                     </div>
 
-                    <span class="mt-5 block text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-bordeaux font-bold">
-                        {{ __('Résilience') }}
-                    </span>
-
-                    <h3 class="mt-3 text-lg sm:text-xl font-black tracking-tight text-primary leading-snug">
+                    <h3 class="mt-5 text-lg sm:text-xl font-black tracking-tight text-primary leading-snug">
                         {{ __('Souveraineté & résilience des infrastructures') }}
                     </h3>
 

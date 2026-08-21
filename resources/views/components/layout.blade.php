@@ -12,7 +12,7 @@
 <body class="bg-surface text-ink font-sans flex flex-col min-h-screen antialiased">
     <header class="sticky top-0 z-50 border-b border-primary/10 bg-white shadow-[0_4px_18px_rgba(17,17,17,0.06)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center h-24">
+            <div class="flex items-center h-28">
 
                 {{-- Logo : sans bloc autour, plus visible sur fond blanc --}}
                 <a href="{{ route('home', ['locale' => app()->getLocale()]) }}"
@@ -20,7 +20,7 @@
                     <img
                         src="{{ asset('images/logo.png') }}"
                         alt="KET Consulting"
-                        class="h-16 sm:h-20 w-auto object-contain">
+                        class="h-20 sm:h-24 w-auto object-contain">
                 </a>
 
                 {{-- Navigation : à droite du logo, proche du bloc langues + CTA --}}
@@ -70,11 +70,6 @@
                             </a>
                         </div>
                     </div>
-
-                    <a href="{{ route('realisations', ['locale' => app()->getLocale()]) }}"
-                        class="relative py-2 {{ request()->routeIs('realisations') ? 'text-primary after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-red' : 'text-primary/70 hover:text-primary' }} transition duration-200">
-                        {{ __('Nos réalisations') }}
-                    </a>
 
                     <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}"
                         class="relative py-2 {{ request()->routeIs('contact') ? 'text-primary after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-red' : 'text-primary/70 hover:text-primary' }} transition duration-200">
@@ -158,11 +153,6 @@
                         </a>
                     </div>
                 </div>
-
-                <a href="{{ route('realisations', ['locale' => app()->getLocale()]) }}"
-                    class="block rounded-md px-3 py-2.5 text-base {{ request()->routeIs('realisations') ? 'bg-primary/8 text-primary' : 'text-primary/80 hover:bg-primary/5 hover:text-primary' }} transition">
-                    {{ __('Nos réalisations') }}
-                </a>
 
                 <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}"
                     class="block rounded-md px-3 py-2.5 text-base {{ request()->routeIs('contact') ? 'bg-primary/8 text-primary' : 'text-primary/80 hover:bg-primary/5 hover:text-primary' }} transition">

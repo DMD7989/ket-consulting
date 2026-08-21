@@ -14,6 +14,6 @@ class ProjectController extends Controller
             ->orderByDesc('created_at')
             ->get();
 
-        return view('realisations', ['projects' => $projects]);
+        return view('blog', ['projects' => $projects]);
     }
 }

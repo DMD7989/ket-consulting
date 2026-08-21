@@ -189,14 +189,6 @@
                 <span class="text-xs font-bold uppercase tracking-[0.24em] text-bordeaux">
                     {{ __('Nos expertises') }}
                 </span>
-
-                <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.08] text-ink">
-                    {{ __('Nos domaines d’expertise') }}
-                </h2>
-
-                <p class="mt-6 text-sm sm:text-base leading-relaxed text-ink/70 max-w-2xl mx-auto">
-                    {{ __('KET Consulting intervient sur plusieurs champs complémentaires afin d’accompagner les organisations dans leurs projets numériques, techniques et opérationnels.') }}
-                </p>
             </div>
 
             <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
@@ -362,16 +354,9 @@
                     {{ __('Nos partenaires') }}
                 </span>
 
-                <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.08] text-ink">
-                    {{ __('Nous travaillons avec des partenaires de confiance') }}
-                </h2>
-
-                <p class="mt-6 text-sm sm:text-base leading-relaxed text-ink/70 max-w-2xl mx-auto">
-                    {{ __('Parce qu’un projet ambitieux repose aussi sur la qualité des alliances qui le portent, nous privilégions des collaborations sérieuses, complémentaires et orientées résultats.') }}
-                </p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 sm:gap-6">
+            <div class="grid grid-cols-3 gap-5 sm:gap-6 max-w-2xl mx-auto">
                 <div class="group h-28 sm:h-32 rounded-[20px] border border-primary/10 bg-white flex items-center justify-center p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
                     <img src="{{ asset('images/partners/partenaire1.png') }}" alt="Partenaire 1" class="max-h-14 sm:max-h-16 w-auto object-contain opacity-80 transition duration-300 group-hover:opacity-100">
                 </div>

@@ -38,12 +38,8 @@ Route::prefix('{locale}')
         Route::get('/services/{slug}', [ServiceController::class, 'show'])
             ->name('services.show');
 
-        Route::get('/realisations', [ProjectController::class, 'index'])
-            ->name('realisations');
-
-        Route::get('/blog', function () {
-            return view('blog');
-        })->name('blog');
+        Route::get('/blog', [ProjectController::class, 'index'])
+            ->name('blog');
 
         Route::get('/contact', function () {
             return view('contact');
